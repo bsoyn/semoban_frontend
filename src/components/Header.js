@@ -21,8 +21,12 @@ function Member (props) {
     const [isClicked, setIsClicked] = useState(false);
 
     return(
-        <div className='icon notice'>
-            <BsFillPersonFill size={24}></BsFillPersonFill>
+        <div className='icon member'>
+            <BsFillPersonFill size={24} data-toggle="dropdown"></BsFillPersonFill>
+            <ul class="dropdown-menu" role="menu">
+                <li>회원정보 수정</li>
+                <li>로그아웃</li>
+            </ul>
         </div>
     )
 }

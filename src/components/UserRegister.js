@@ -54,39 +54,31 @@ function Register () {
         setKeyword(event.currentTarget.value);
     };
 
-    const onRegister = (event) => {
-        try {
-            let res = axios({
-                method:"post",
-                url:"/register",
-                data:{
-                    userId: {id},
-                    password: {pw},
-                    userName: {name},
-                    dateOfBirth: {birth},
-                    email: {email},
-                    interestKeywords: {keyword}
-                },
-            });
-            console.log(res);
-            document.write(JSON.stringify(res));
-        }catch (err) {
-            
-        }
-    }
-
     const requestRegister = () => {
         const url = "https://reqres.in/api/register";
-        const email = document.getElementById("email").value;
-        const pw = document.getElementById("pw").value;
 
-        axios(url,{},{
-            userId: {id},
-            "password": {pw},
-            userName: {name},
-            dateOfBirth: {birth},
-            "email": {email},
-            interestKeywords: {keyword}
+        const email = document.getElementById("email");
+        // const password = document.getElementById('pw')
+
+        // axios(url,{},{
+        //     "userId": {id},
+        //     "password": {pw},
+        //     "userName": {name},
+        //     "dateOfBirth": {birth},
+        //     "email": {email},
+        //     "interestKeywords": {keyword}
+        // })
+        axios({
+            method:"POST",
+            url: "https://reqres.in/api/register",
+            data:{
+                "userId": {id},
+                "password": {pw},
+                "userName": {name},
+                "dateOfBirth": {birth},
+                "email": email.value,
+                "interestKeywords": {keyword}
+            }
         })
         .then(function (res){
             console.log("success");

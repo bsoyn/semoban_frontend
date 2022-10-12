@@ -1,6 +1,7 @@
 import axios from 'axios';
 import React, { Component, useEffect, useState, useCallback } from 'react';
 import '../css/register.css';
+import {button} from 'react-bootstrap';
 
 
 
@@ -15,11 +16,11 @@ function FindIdPage () {
     }
 
     const onBirthHandler = (event) =>{
-        setUserName(event.currentTarget.value);
+        setUserBirth(event.currentTarget.value);
     }
 
     const onEmailHandler = (event) =>{
-        setUserName(event.currentTarget.value);
+        setUserEmail(event.currentTarget.value);
     }
 
     const onFindidHandler = (event) => {
@@ -27,43 +28,58 @@ function FindIdPage () {
             method:"Post",
             url:"/Main",
             data:{
-                name: {userName},
-                birth: {userBirth},
-                email: {userEmail}
+                "name": {userName},
+                "birth": {userBirth},
+                "email": {userEmail}
             }
 
         })
     }
 
-    const requestFindid = (event) => [
-        onFindidHandler(()=>{
-            onFindidHandler.then((res)=>{
+    const requestFindid = (event) => {
 
-            })
+        axios({
+            method:"POST",
+            url: "",
+            data:{
+                "userName": {userName},
+                "dateOfBirth": {userBirth},
+                "email": {userEmail}
+            }
         })
-    ]
+        .then(function (res){
+            console.log("success");
+            console.log(res);
+        })
+        .catch(function (error) {
+            console.log("fail");
+            console.log(error);
+            throw new Error(error);
+        })
+        .then(function(){
+
+        });
+    }
 
     return(
         <div className='input_page'>
             <h2>아이디 찾기</h2>
-            <form action='' method='post'>
-                <div className='input'>
-                    <div className='input_content'>
-                        <div className='input_what'><label for="name">이름</label></div>
-                        <span className='input_area'><input type="text" id="name" className='write' onChange={onNameHandler}></input></span>
-                    </div>
-                    <div className='input_content'>
-                        <div className='input_what'><label for="birth">생년월일</label></div>
-                        <span className='input_area'><input id="birth" type="date" onChange={onBirthHandler}></input></span>
-                    </div>
-                    <div className='input_content'>
-                        <div className='input_what'><label for="email">이메일</label></div>
-                        <span className='input_area'><input type="email" id="email" className='input_text' onChange={onEmailHandler}></input></span>
-                    </div>
-                    
-                    <input id="button" type="submit" value="아이디 찾기" onClick={requestFindid}></input>
+            <div className='input'>
+                <div className='input_content mb-3'>
+                    <div className='input_what'><label for="name" className='form-label'>이름</label></div>
+                    <span className='input_area'><input type="text" id="name" className='write form-control' onChange={onNameHandler}></input></span>
                 </div>
-            </form>
+                <div className='input_content'>
+                    <div className='input_what'><label for="birth" className='form-label'>생년월일</label></div>
+                    <span className='input_area'><input id="birth" type="date" className='write form-control' onChange={onBirthHandler}></input></span>
+                </div>
+                <div className='input_content'>
+                    <div className='input_what'><label for="email" className='form-label'>이메일</label></div>
+                    <span className='input_area'><input type="email" id="email" className='write form-control' onChange={onEmailHandler}></input></span>
+                </div>
+                    
+                <input id="button" type="submit" value="아이디 찾기" class="btn btn-success" onClick={requestFindid}></input>
+            </div>
         </div>
     )
 }

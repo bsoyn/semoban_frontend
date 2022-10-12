@@ -12,6 +12,7 @@ function Main() {
         <div className='main'>
             <Link to='/register'>회원가입</Link>
             <Link to='/findid'>아이디찾기</Link>
+            <Link to='/findpassword'>비밀번호찾기</Link>
         </div>
     )
 }
