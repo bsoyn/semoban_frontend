@@ -23,18 +23,6 @@ function FindIdPage () {
         setUserEmail(event.currentTarget.value);
     }
 
-    const onFindidHandler = (event) => {
-        return axios({
-            method:"Post",
-            url:"/Main",
-            data:{
-                "name": {userName},
-                "birth": {userBirth},
-                "email": {userEmail}
-            }
-
-        })
-    }
 
     const requestFindid = (event) => {
 

@@ -60,6 +60,7 @@
     background-color: gray;
     color: aliceblue;
     position: absolute;
+    padding: 0.4em 0;
 }
 
 .li_menu{
