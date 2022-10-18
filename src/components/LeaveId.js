@@ -12,24 +12,29 @@ function LeaveIdPage () {
 
 
     const requestLeavdId = (event) => {
+        
+        const token = sessionStorage.getItem('accessToken');
         axios({
-            method:"POST",
-            url: "",
+            method:"delete",
+            url: "/member/leaveId",
+            headers: {
+                Authorization: `Bearer ${token}`
+            },
             data:{
                 "password": {pw}
             }
         })
         .then(function (res){
-            console.log("success");
-            console.log(res);
+            return res.data.responseData.redirect;
+        }).then((res) => {
+            window.location = `${res}`;
         })
-        .catch(function (error) {
-            console.log("fail");
-            console.log(error);
-            throw new Error(error);
-        })
-        .then(function(){
-
+        .catch(function (err) {
+            if (err.response) {
+                console.log(err.response.data);
+                console.log(err.response.status);
+                console.log(err.response.header);
+            }
         });
     }
 

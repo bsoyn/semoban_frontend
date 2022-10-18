@@ -1,0 +1,59 @@
+.updateMemberButtons{
+    display: flex;
+    justify-content : space-evenly;
+}
+
+.Login {
+    font-size: large;
+    padding: 60px 0;
+
+}
+
+.Login form {
+    margin: 0 auto;
+    max-width: 320px;
+    width: 800px !important;
+}
+
+.btn,
+.btn-primary:focus,
+.btn-primary:active {
+    font-size: large;
+    color: #fff;
+    background-color: #59c294;
+    border: #59c294;
+    box-shadow: inset 2px 2px 2px 0px rgba(255, 255, 255, .5),
+        7px 7px 20px 0px rgba(0, 0, 0, .1),
+        4px 4px 5px 0px rgba(0, 0, 0, .1);
+    transition: all 0.3s ease;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+
+}
+
+.btn-primary:hover {
+    color: #fff;
+    background-color: #44df9c !important;
+}
+/* 
+.kwdBtn:active{
+    color: #fff;
+    background-color: #44df9c !important;
+} */
+
+.title {
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.link_button{
+    text-decoration: none;
+    color:#fff;
+}
+.link_button:hover{
+    text-decoration: none;
+    color:#fff;
+}
+

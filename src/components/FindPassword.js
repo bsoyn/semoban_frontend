@@ -22,24 +22,16 @@ function FindPwPage () {
 
         axios({
             method:"POST",
-            url: "",
+            url: "/member/findPwd",
             data:{
                 "userId":{userId},
                 "email": {userEmail}
             }
         })
         .then(function (res){
-            console.log("success");
-            console.log(res);
+            console.log(res.data.responseData);
         })
-        .catch(function (error) {
-            console.log("fail");
-            console.log(error);
-            throw new Error(error);
-        })
-        .then(function(){
-
-        });
+        .catch(console.err);
     }
 
     return(

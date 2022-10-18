@@ -16,26 +16,30 @@ function ChangePwPage () {
     }
 
     const requestChangePw = (event) => {
-
+        const token = sessionStorage.getItem('accessToken');
         axios({
-            method:"POST",
-            url: "",
+            method:"put",
+            url: "/member/changePwd",
+            headers: {
+                Authorization: `Bearer ${token}`
+            },
             data:{
-                "password": {oldPw},
-                "password": {newPw}
+                "password_exist": {oldPw},
+                "password_change": {newPw},
             }
         })
         .then(function (res){
-            console.log("success");
+            return res.data.responseData.redirect;
+        }).then((res) => {
+            window.location = `${res}`;
             console.log(res);
         })
-        .catch(function (error) {
-            console.log("fail");
-            console.log(error);
-            throw new Error(error);
-        })
-        .then(function(){
-
+        .catch(function (err) {
+            if (err.response) {
+                console.log(err.response.data);
+                console.log(err.response.status);
+                console.log(err.response.header);
+            }
         });
     }
 

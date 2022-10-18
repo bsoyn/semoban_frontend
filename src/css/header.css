@@ -20,7 +20,7 @@
 
 .icon_menu{
     display: flex;
-    margin: 20px auto 5px;
+    margin: 20px 15px 0px;
     justify-content:flex-end;
 }
 
@@ -35,23 +35,43 @@
 
 .head_menus {
     display: flex;
-    /* justify-content: center; */
-    justify-content: space-evenly;
+    justify-content: center;
+    /* justify-content: space-evenly; */
     margin-top: auto;
-    border: solid 1px black;
+    border: 1px black;
+    border-style: none none solid;
+    flex-basis: 30%;
 }
 
 .head_menu {
     width: 200px;
-    margin: 0 10px;
+    margin: 0;
     height: 80px;
 }
+
+
+.icon_content{
+    width: 120px;
+    min-width: 100px;
+    text-align: center;
+    line-height: 30px;
+    background-color: gray;
+    color: aliceblue;
+    position: absolute;
+    padding: 0.4em 0;
+    left: -2.8rem;
+}
+
 
 .menu_name{
     width: 200px;
     text-align: center;
     line-height: 80px;
+    font-size: 1.5rem;
+    
+    background-color: #E1FFB1;
 }
+
 .menu_content{
     width: 200px;
     min-width: 100px;
