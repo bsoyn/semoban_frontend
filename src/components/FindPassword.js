@@ -1,7 +1,6 @@
 import axios from 'axios';
 import React, { Component, useEffect, useState, useCallback } from 'react';
-import '../css/register.css';
-import {button} from 'react-bootstrap';
+import '../css/member.css';
 
 
 
@@ -22,10 +21,10 @@ function FindPwPage () {
 
         axios({
             method:"POST",
-            url: "/member/findPwd",
+            url: "/api/member/findPwd",
             data:{
-                "userId":{userId},
-                "email": {userEmail}
+                "userId":userId,
+                "email": userEmail
             }
         })
         .then(function (res){

@@ -62,7 +62,6 @@
     left: -2.8rem;
 }
 
-
 .menu_name{
     width: 200px;
     text-align: center;
@@ -85,4 +84,9 @@
 
 .li_menu{
     list-style-type:none;
+}
+
+.link_menu{
+    text-decoration: none;
+    color: aliceblue;
 }

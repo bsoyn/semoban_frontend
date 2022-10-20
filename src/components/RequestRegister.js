@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import'../css/register.css';
+import'../css/member.css';
 import Error from './ErrorMessage';
 import {useState, useEffect, useCallback} from 'react';
 import axios from 'axios';
@@ -69,28 +69,21 @@ function RequestRegister () {
     };
 
     const requestRegister = () => {
-        if(id===""){
-            alert("아이디 미입력");
-            return;
-        }
-        const url = "";
         const email = document.getElementById("email");
-        // const password = document.getElementById('pw')
 
         axios({
             method:"POST",
-            url: "",
+            url: "/member/register",
             data:{
-                "userId": {id},
-                "password": {pw},
-                "userName": {name},
-                "dateOfBirth": {birth},
-                "email": email.value,
-                "interestKeywords": {keyword}
+                userId: id,
+                password: pw,
+                userName: name,
+                dateOfBirth: birth,
+                email: email.value,
+                interestKeywords: keyword
             }
         })
         .then(res=>{
-            console.log(res)
             return res.data.responseData.redirect;
         })
         .then((res)=>{

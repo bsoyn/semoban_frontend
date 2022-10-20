@@ -1,6 +1,6 @@
 import axios from 'axios';
 import React, { Component, useEffect, useState, useCallback } from 'react';
-import '../css/register.css';
+import '../css/member.css';
 
 
 function LeaveIdPage () {
@@ -16,12 +16,12 @@ function LeaveIdPage () {
         const token = sessionStorage.getItem('accessToken');
         axios({
             method:"delete",
-            url: "/member/leaveId",
+            url: "/api/member/leaveId",
             headers: {
                 Authorization: `Bearer ${token}`
             },
             data:{
-                "password": {pw}
+                "password": pw
             }
         })
         .then(function (res){

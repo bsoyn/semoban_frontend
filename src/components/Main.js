@@ -2,11 +2,6 @@ import React, {Component} from 'react';
 import { Link, Route, Routes } from 'react-router-dom';
 
 
-
-function Nonmember() {
-    
-}
-
 function Main() {
     return(
         <div className='main'>
@@ -18,7 +13,6 @@ function Main() {
             <Link to='/changepassword'>비밀번호변경</Link>
             <Link to='/leaveid'>회원탈퇴</Link>
             
-
         </div>
     )
 }

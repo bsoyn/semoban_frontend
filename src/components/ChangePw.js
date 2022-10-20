@@ -1,6 +1,6 @@
 import axios from 'axios';
 import React, { Component, useEffect, useState, useCallback } from 'react';
-import '../css/register.css';
+import '../css/member.css';
 
 
 function ChangePwPage () {
@@ -19,13 +19,13 @@ function ChangePwPage () {
         const token = sessionStorage.getItem('accessToken');
         axios({
             method:"put",
-            url: "/member/changePwd",
+            url: "/api/member/changePwd",
             headers: {
                 Authorization: `Bearer ${token}`
             },
             data:{
-                "password_exist": {oldPw},
-                "password_change": {newPw},
+                password_exist: oldPw,
+                password_change: newPw 
             }
         })
         .then(function (res){

@@ -1,7 +1,6 @@
 import axios from 'axios';
 import React, { Component, useEffect, useState, useCallback } from 'react';
-import '../css/register.css';
-import {button} from 'react-bootstrap';
+import '../css/member.css';
 
 
 
@@ -28,11 +27,11 @@ function FindIdPage () {
 
         axios({
             method:"POST",
-            url: "/member/findId",
+            url: "/api/member/findId",
             data:{
-                "userName": {userName},
-                "dateOfBirth": {userBirth},
-                "email": {userEmail}
+                "userName": userName,
+                "dateOfBirth": userBirth,
+                "email": userEmail
             }
         })
         .then(function (res){

@@ -26,7 +26,7 @@ function Member (props) {
             <BsFillPersonFill size={24} onClick={e=>setIsClicked(!isClicked)}></BsFillPersonFill>
             <Dropdown visibility={isClicked}>
                 <ul className='boardmenu icon_content'>
-                    <li className='li_menu'>회원정보 수정</li>
+                    <li className='li_menu'><Link to='/updatemem' className='link_menu'>회원정보 수정</Link></li>
                     <li className='li_menu'>로그아웃</li>
                 </ul>
             </Dropdown>
