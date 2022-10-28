@@ -73,7 +73,7 @@ function RequestRegister () {
 
         axios({
             method:"POST",
-            url: "/member/register",
+            url: "/auth/register",
             data:{
                 userId: id,
                 password: pw,
@@ -132,7 +132,7 @@ function RequestRegister () {
                     <span className='input_area'><input type="text" id="keyword" className='write form-control' onChange={onKeywordHandler}></input></span>
                 </div>
                 
-                <input id="button" type="submit" value="회원가입" class="btn btn-success" onClick={requestRegister}></input>
+                <input type='button' id="button" value="회원가입" class="btn btn-success" onClick={requestRegister}></input>
             </div>
         </div>
     )

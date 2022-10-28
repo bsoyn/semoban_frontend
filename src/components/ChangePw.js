@@ -24,8 +24,8 @@ function ChangePwPage () {
                 Authorization: `Bearer ${token}`
             },
             data:{
-                password_exist: oldPw,
-                password_change: newPw 
+                "password_exist": oldPw,
+                "password_change": newPw 
             }
         })
         .then(function (res){
@@ -57,7 +57,7 @@ function ChangePwPage () {
                     <span className='input_area'><input type="password" id="newPw" className='write form-control' onChange={onNewPwHandler}></input></span>
                 </div>
                     
-                <input id="button" type="submit" value="비밀번호 변경" class="btn btn-success" onClick={requestChangePw}></input>
+                <input id="button" type='button' value="비밀번호 변경" class="btn btn-success" onClick={requestChangePw}></input>
             </div>
         </div>
     )

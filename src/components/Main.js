@@ -12,6 +12,8 @@ function Main() {
             <Link to='/findpassword'>비밀번호찾기</Link>
             <Link to='/changepassword'>비밀번호변경</Link>
             <Link to='/leaveid'>회원탈퇴</Link>
+            <p></p>
+            <Link to='/freeboard'>자유게시판</Link>
             
         </div>
     )

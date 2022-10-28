@@ -27,25 +27,25 @@ function UpdateMember() {
           Authorization: `Bearer ${token}`,
         },
       })
-        .then((res) => {
+      .then((res) => {
           // input_userId.value = res.data.responseData.userId;
           // input_dateOfBirth.value = res.data.responseData.dateOfBirth;
           // input_email.value = res.data.responseData.email;
           // input_interestKeywords.value = res.data.responseData.interestKeywords;
-          setUserid(res.data.responseData.id);
-          setDateofBirth(res.data.responseData.first_name);
+          setUserid(res.data.responseData.userId);
+          setDateofBirth(res.data.responseData.dateOfBirth);
           setEmail(res.data.responseData.email);
-          setKeywords(res.data.responseData.last_name);
-        })
-        .catch((err) => {
+          setKeywords(res.data.responseData.interestKeywords);
+      })
+      .catch(function (err) {
           if (err) {
-            console.log(err);
             console.log(err.response.data);
             console.log(err.response.status);
             console.log(err.response.header);
           }
-        });
+      });
     }
+
     getInfo();
   });
 
@@ -59,13 +59,13 @@ function UpdateMember() {
       url: "/api/member/changeInfo",
       method: "put",
       headers: {
-        uthorization: `Bearer ${token}`,
+        Authorization: `Bearer ${token}`,
       },
       data: {
-        which: "changeInfo",
-        dateOfBirth: dateOfBirth,
-        email: email,
-        interestKeywords: interestKeywords,
+        "which": "changeInfo",
+        "dateOfBirth": dateOfBirth,
+        "email": email,
+        "interestKeywords": interestKeywords,
       },
     })
       .then((res) => {
@@ -142,7 +142,7 @@ function UpdateMember() {
         <p className="updateMemberButtons">
           <Button
             className="btn-success"
-            type="submit"
+            // type="submit"
             onClick={requestChangeInfo}
           >
             수정

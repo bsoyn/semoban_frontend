@@ -13,12 +13,10 @@ export default function Login() {
   //id에 입력한 id 저장
   function onIdHandler(event) {
     setId(event.currentTarget.value);
-    console.log(id);
   }
   //password에 입력한 비밀번호 저장
   function onPasswordHandler(event) {
     setPassword(event.currentTarget.value);
-    console.log(password);
   }
 
   function handleSubmit(event) {
@@ -28,11 +26,11 @@ export default function Login() {
   //로그인 요청
   function requestLogin(event) {
     axios({
-      url: "/member/login",
+      url: "/auth/login",
       method: "post",
       data: {
-        userId: id,
-        password: password,
+        "userId": id,
+        "password": password,
       },
     })
       .then((res) => {
@@ -71,7 +69,7 @@ export default function Login() {
 
         <Button
           block="true"
-          type="submit"
+          // type="submit"
           className="mb-5 btn btn-success loginBtn"
           size="lg"
           onClick={requestLogin}

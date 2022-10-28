@@ -24,10 +24,13 @@ function FindIdPage () {
 
 
     const requestFindid = (event) => {
-
+        const token = sessionStorage.getItem('accessToken');
         axios({
             method:"POST",
             url: "/api/member/findId",
+            headers: {
+                Authorization: `Bearer ${token}`
+            },
             data:{
                 "userName": userName,
                 "dateOfBirth": userBirth,
@@ -35,9 +38,18 @@ function FindIdPage () {
             }
         })
         .then(function (res){
-            console.log(res.data.responseData);
+            return res.data.resposeData.redirect;
         })
-        .catch(console.err);
+        .then((res) => {
+            window.location = `${res}`;
+        })
+        .catch(function (err) {
+            if (err) {
+            console.log(err.response.data);
+            console.log(err.response.status);
+            console.log(err.response.header);
+            }
+        });
     }
 
     return(
@@ -57,7 +69,7 @@ function FindIdPage () {
                     <span className='input_area'><input type="email" id="email" className='write form-control' onChange={onEmailHandler}></input></span>
                 </div>
                     
-                <input id="button" type="submit" value="아이디 찾기" class="btn btn-success" onClick={requestFindid}></input>
+                <input type='button' id="button" value="아이디 찾기" class="btn btn-success" onClick={requestFindid}></input>
             </div>
         </div>
     )

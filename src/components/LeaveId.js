@@ -48,7 +48,7 @@ function LeaveIdPage () {
                     <span className='input_area'><input type="password" id="pw" className='write form-control' onChange={onPwHandler}></input></span>
                 </div>
                     
-                <input id="button" type="submit" value="회원 탈퇴" class="btn btn-success" onClick={requestLeavdId}></input>
+                <input type='button' id="button" value="회원 탈퇴" class="btn btn-success" onClick={requestLeavdId}></input>
             </div>
         </div>
     )

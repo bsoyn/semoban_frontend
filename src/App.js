@@ -10,6 +10,7 @@ import LeaveIdPage from './components/LeaveId';
 import RequestRegister from './components/RequestRegister';
 import Login from './components/Login';
 import UpdateMember from './components/UpdateMember';
+import Board from './components/Board';
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
         <Route path="/findpassword" element={<FindPwPage />}></Route>
         <Route path="/changepassword" element={<ChangePwPage />}></Route>
         <Route path="/leaveid" element={<LeaveIdPage />}></Route>
+        <Route path="/freeboard" element={<Board />}></Route>
       </Routes>
     </>
   );
