@@ -32,10 +32,10 @@ function UpdateMember() {
           // input_dateOfBirth.value = res.data.responseData.dateOfBirth;
           // input_email.value = res.data.responseData.email;
           // input_interestKeywords.value = res.data.responseData.interestKeywords;
-          setUserid(res.data.responseData.userId);
-          setDateofBirth(res.data.responseData.dateOfBirth);
-          setEmail(res.data.responseData.email);
-          setKeywords(res.data.responseData.interestKeywords);
+          setUserid(res.data.responseData.result.userId);
+          setDateofBirth(res.data.responseData.result.dateOfBirth);
+          setEmail(res.data.responseData.result.email);
+          setKeywords(res.data.responseData.result.interestKeywords);
       })
       .catch(function (err) {
           if (err) {

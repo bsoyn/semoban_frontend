@@ -1,0 +1,57 @@
+*{
+    margin: auto;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Pretendard-Regular';
+}
+.table{
+    width:800px;
+}
+
+h2{
+    margin: 35px 0px 10px;
+    text-align: center;
+}
+
+.table-bordered>:not(caption)>*>*{
+    border-width: 0 0;
+}
+
+.post_id{
+    width: 8%;
+}
+.post_title{
+    width: 58%;
+}
+.post_writer{
+
+}
+.post_date{
+    width:12%;
+    font-size: 0.8em;
+}
+.post_date.head{
+    font-size: 1em;
+}
+.post_hit{
+    width: 5%;
+}
+.post_like{
+    width: 5%;
+}
+
+/* paging */
+.nav{
+    justify-content: center;
+}
+.btn-primary{
+}
+.paging_button,
+.paging_button:focus,
+.paging_button:active{
+    display: flex;
+    margin:0 10px;
+    justify-content: center;
+    list-style: none;
+    background-color: #59c294;
+}

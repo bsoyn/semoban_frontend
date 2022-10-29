@@ -1,21 +1,21 @@
 // import logo from './logo.svg';
 import React, { useRef } from "react";
-import Main from './components/Main';
-import Header from "./components/Header";
+import Main from './Pages/Main';
+import Header2 from "./Components/Header2";
 import { Route, Routes } from "react-router-dom";
-import FindIdPage from './components/FindId';
-import FindPwPage from './components/FindPassword';
-import ChangePwPage from './components/ChangePw';
-import LeaveIdPage from './components/LeaveId';
-import RequestRegister from './components/RequestRegister';
-import Login from './components/Login';
-import UpdateMember from './components/UpdateMember';
-import Board from './components/Board';
+import FindIdPage from './Pages/FindId';
+import FindPwPage from './Pages/FindPassword';
+import ChangePwPage from './Pages/ChangePw';
+import LeaveIdPage from './Pages/LeaveId';
+import RequestRegister from './Pages/RequestRegister';
+import Login from './Pages/Login';
+import UpdateMember from './Pages/UpdateMember';
+import Board from './Pages/FreeBoard';
 
 function App() {
   return (
     <>
-    <Header></Header>
+    <Header2></Header2>
       <Routes>
         <Route path="/" element={<Main></Main>}></Route>
         <Route path="/register" element={<RequestRegister />}></Route>

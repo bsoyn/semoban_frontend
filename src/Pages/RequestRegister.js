@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import'../css/member.css';
-import Error from './ErrorMessage';
+import Error from '../Components/ErrorMessage';
 import {useState, useEffect, useCallback} from 'react';
 import axios from 'axios';
 
